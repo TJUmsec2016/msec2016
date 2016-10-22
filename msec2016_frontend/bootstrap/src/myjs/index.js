@@ -71,7 +71,7 @@ function changeit(){
         console.log("we got at promise,",data)
         for(let p of data){
 //            updateMathContent(p.definition+"="+p.answer);
-            updateMathContent(p.definition);
+            updateMathContent(p.mathJaxDefinition);
             setMathAnswer(p.answer);
         }
     })
