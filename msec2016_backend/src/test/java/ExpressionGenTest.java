@@ -27,21 +27,21 @@ public class ExpressionGenTest {
 
     @Test
     public void getSomeExpression() {
-        expressionGen.setDataType(true, false, false);
-        expressionGen.setOperatorType(false, false, false, true);
+        expressionGen.setDataType(false, true, false);
+        expressionGen.setOperatorType(true, false, false, false);
 
-        expressionGen.setOperatorNum(1,4);
+        expressionGen.setOperatorNum(1,2);
 
         Generex generex = expressionGen.getGenerex();
 
 
         List<String> ls = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 100; i++) {
             ls.add(generex.random());
         }
 
         for (String s : ls) {
-            System.out.println(s + ":" + s.length());
+            System.out.println(s + "    ,length:" + s.length());
             //assertThat(s.length()).isEqualTo(10);
         }
     }

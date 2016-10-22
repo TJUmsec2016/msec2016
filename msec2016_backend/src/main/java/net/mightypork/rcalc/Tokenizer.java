@@ -154,7 +154,7 @@ public class Tokenizer implements IDebugable {
 		boolean parsingNumber = false;
 
 		for (Character c : input.toCharArray()) {
-			if (c.toString().matches("[\\-0-9.]")) {
+			if (c.toString().matches("[\\-0-9.]")) {	//treat minus as number
 				buffer += c;
 				parsingNumber = true;
 			} else {

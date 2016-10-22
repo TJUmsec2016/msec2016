@@ -1,0 +1,71 @@
+# Empty CSS file for your own CSS
+
+body{
+}
+
+div{
+    font-family: "微软雅黑 Light";
+}
+
+
+
+.six-sec-ease-in-out {
+  -webkit-transition: width 120s ease-in-out;
+  -moz-transition: width 120s ease-in-out;
+  -ms-transition: width 120s ease-in-out;
+  -o-transition: width 120s ease-in-out;
+  transition: width 120s ease-in-out;
+}
+.remind_time {
+    height: 100px;
+}
+
+#problem_Text {
+    position: relative;
+/*    border-color: aqua;*/
+/*    background-color: aquamarine;*/
+    padding: 2%;
+    margin: 2%;
+    text-align: center;
+    font-family: "微软雅黑 Light";
+    font-size: 20px;
+}
+
+.navarbar-manual-size {
+    margin-bottom: 50px;
+}
+
+#answer_Text {
+    position: relative;
+    border-color: aqua;
+/*    background-color: aquamarine;*/
+/*    padding: 2%;*/
+    padding-left: 20%;
+    margin: 2%;
+    text-align: center;
+    font-family: "微软雅黑 Light";
+    font-size: 20px;
+}
+
+#answer_holder_Text{
+    position: relative;
+/*    background-color: aquamarine;*/
+    
+/*    padding: 1%;*/
+    margin: 2%;
+    text-align: center;
+    font-family: "微软雅黑 Light";
+    font-size: 20px;
+}
+
+#modal-001 {
+    position: relative;
+/*    border-color: aqua;*/
+/*    background-color: azure;*/
+/*    padding: 1%;*/
+    padding: 10%;
+    margin: 3%;
+    text-align: center;
+    font-family: "微软雅黑 Light";
+    font-size: 20px;
+}
