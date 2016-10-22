@@ -142,11 +142,11 @@ public class Fraction implements IEvaluableToken {
 	/**
 	 * Get denominator number
 	 * 
-	 * @return numerator
+	 * @return denominator
 	 */
 	public BigInteger getDenominator() {
 
-		return numerator;
+		return denominator;
 	}
 
 
@@ -440,6 +440,19 @@ public class Fraction implements IEvaluableToken {
 		if (!isFractional()) return numerator.divide(denominator).toString();
 
 		return numerator + "/" + denominator;
+	}
+
+	/**
+	 * Get a string representation of this fraction in the format
+	 * "\frac{numerator}{denominator}", alternatively "numerator" if denominator is
+	 * equal to 1.
+	 * For mathJax
+	 */
+	public String toMathJaxString() {
+
+		if (!isFractional()) return numerator.divide(denominator).toString();
+
+		return "\\frac{" + numerator + "}{" + denominator + "}";
 	}
 
 
