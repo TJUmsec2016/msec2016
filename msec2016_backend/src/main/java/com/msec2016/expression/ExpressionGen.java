@@ -26,9 +26,10 @@ public class ExpressionGen implements IExpressionGen {
 
         dataType = "";//every update will delete the former one
 
-        String integer = "[1-9]\\d{0,1}";   //the num is just small enough.(1 - 91)
+        String integer = "([1-9]\\d{0,1})";   //the num is just small enough.(1 - 91)
+        String integerforFracton = "([2-9]|(1\\d{1}))"; // 2-19
         //String justFrac = "\\(" + integer + "/" + integer + "\\)"; // fraction,the numerator and denominator should not be too big
-        String justFrac = integer + "/" + integer;
+        String justFrac = integerforFracton + "/" + integerforFracton;
         String mixedFrac = integer + "'" + justFrac;
 
 
@@ -55,13 +56,13 @@ public class ExpressionGen implements IExpressionGen {
         operatorType = "";//every update will delete the former one
 
         if (addOp) {
-            operatorType = addNewType(operatorType, OperationToken.ADD.toString());
+            operatorType = addNewType(operatorType, "\\+");
         }
         if (subOp) {
-            operatorType = addNewType(operatorType, OperationToken.SUB.toString());
+            operatorType = addNewType(operatorType, "\\-");
         }
         if (mulOp) {
-            operatorType = addNewType(operatorType, OperationToken.MUL.toString());
+            operatorType = addNewType(operatorType, "\\*");
         }
         if (divOp) {
             operatorType = addNewType(operatorType, "\\#"); //Interesting,should not be this.
@@ -79,7 +80,7 @@ public class ExpressionGen implements IExpressionGen {
 
 
         String reStr = dataType + "(" + operatorType + dataType + "){" + minOpNum + "," + maxOpNum + "}";
-
+        System.out.println("WE want to generate:" + reStr);
         return new Generex(reStr);
     }
 }

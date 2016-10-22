@@ -54,7 +54,7 @@ public class ProGenAndSolverTest {
 
         for (Problem problem : problemList) {
             System.out.println(problem);
-            System.out.println("RCalc got:" + rCalc.evaluate(problem.getDefinition()));
+            System.out.println("RCalc got:" + rCalc.evaluate(problem.getOldDefinition()));  // getOldDefinition to test beautify definition is OK
             assertThat(rCalc.evaluate(problem.getDefinition()).toString())
                     .isEqualTo(problem.getAnswer());
         }
