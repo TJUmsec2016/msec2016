@@ -39,6 +39,7 @@ function updateMathContent(s) {
 
 function setMathAnswer(answer){
     $('#answer_holder_Text').val(answer);
+    $('#answer_holder_Text').html("");
 }
 
 function getMathAnswer(){
@@ -62,6 +63,7 @@ function changeit(){
         $('#modal-don-not-input-answer').click();
         return;
     }
+    
     
     
     var dp = getProblemsPromise;
