@@ -1,0 +1,1 @@
+在 common 里面的 header.html 中调用 js 可用，但复制到 index.html 中不可用，只有把 `<script src="myjs/getAnswer.js"></script>` 复制到底部才可以。原因未知。
