@@ -1,6 +1,6 @@
 'use strict';
-//var our_project_base_url = "http://demo.tjuwork.win:9000/api"; //远程服务器
-var our_project_base_url = "http://localhost:9900";
+var our_project_base_url = "http://demo.tjuwork.win:9000/api"; //远程服务器
+//var our_project_base_url = "http://localhost:9900";
 
 
 
@@ -56,7 +56,7 @@ function clear_get_calc(){
 var getCalcAnswer = {
     get_calc_answer:function (des){
         
-        var des_json = {'description': '2*3'};  //SHOULD be `des`
+        var des_json = {'description': des};  //SHOULD be `des`
     
         console.log("Ready to request calc",des_json);
         
@@ -81,10 +81,10 @@ var getCalcAnswer = {
 function put_info(){
     var des = getWantToCalc();
     console.log("des is:",des);
-//    if(des == "" || typeof(des) == "undefined" ){
-//        alert("输入点东西我才能计算啊！");
-////        return;
-//    }
+    if(des == "" || typeof(des) == "undefined" ){
+        alert("输入点东西我才能计算啊！");
+//        return;
+    }
 
     
     
@@ -109,7 +109,9 @@ function put_info(){
 }
 
 
-
+function calculator(){
+    $('#modal-calc').click()
+}
 
 
 

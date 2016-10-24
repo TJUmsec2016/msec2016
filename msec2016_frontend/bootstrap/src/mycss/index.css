@@ -69,3 +69,9 @@ div{
     font-family: "微软雅黑 Light";
     font-size: 20px;
 }
+
+#calculator_btn {
+    position: relative;
+    margin-top: 0.5%;
+    margin-right: 2%;
+}
