@@ -28,6 +28,7 @@ public class MainController {
     @RequestMapping("user")
     @ResponseBody
     public User returnUser() {
+        logger.info("Asking for user");
         User miao = new User("miaodx", 21);
         return miao;
     }

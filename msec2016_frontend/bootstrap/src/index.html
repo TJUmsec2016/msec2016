@@ -17,6 +17,8 @@
     <link href="mycss/index.css" type="text/css" rel="stylesheet">
     
 
+
+   
     
   </head>
   
@@ -27,41 +29,97 @@
     <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
-			<nav class="navbar navbar-default navbar-inverse navbar-static-top navarbar-manual-size" role="navigation">
-				<div class="navbar-header">
-					 
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-						 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-					</button> <a class="navbar-brand" href="#">小学生四则运算</a>
-				</div>
-				
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav">
-						<li class="active">
-							<a href="#">单挑模式</a>
-						</li>
-						<li>
-							<a href="#">群殴模式</a>
-						</li>
-                        <li>
-							<a href="#">旧版</a>
-						</li>
-                        <li>
-							<a href="#">休息一下</a>
-						</li>						
-					</ul>
-					<form class="navbar-form navbar-right" role="search">
+        
+        <!--   Header    -->
+<!--        @@include('common/header.html')-->
+<nav class="navbar navbar-default navbar-inverse navbar-static-top navarbar-manual-size" role="navigation">
+    <div class="navbar-header">
+
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+             <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        </button> <a class="navbar-brand" href="#">小学生四则运算</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+            <li class="active">
+                <a href="#">单挑模式</a>
+            </li>
+            <li>
+                <a href="#">群殴模式</a>
+            </li>
+            <li>
+                <a href="#">旧版</a>
+            </li>
+            <li>
+                <a href="#">休息一下</a>
+            </li>						
+        </ul>
+        
+   
+<!--        <form class="navbar-right" >-->
+<!--
 						<div class="form-group">
 							<input class="form-control" type="text">
 						</div> 
-						<button type="submit" class="btn btn-default">
+-->
+						<button type="submit" class="btn btn-default " id="calculator_btn" onclick="calculator()">
                             计算一下
 						</button>
-					</form>
-					
-				</div>
-				
-			</nav>
+<!--        </form>-->
+
+    </div>
+
+</nav>
+
+    <a id="modal-calc" href="#modal-container-005" role="button" class="btn" data-toggle="modal"></a>
+    <div class="modal fade" id="modal-container-005" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        ×
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        嘿，很高兴为你计算 ~
+                    </h4>
+                </div>
+                <div class="modal-body">
+<!--                    <p>“恭喜你算对了！！”</p>-->
+                    <input type="text" id="want_to_calc" class="form-control " placeholder="在此输入你想计算的问题">
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        我只是看看而已
+                    </button> 
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="put_info()">
+                        计算一下
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 			<div class="row">
 			
 				<div class="col-md-3">
@@ -385,5 +443,8 @@
       <script src="myjs/index.js"></script>
       <script src="myjs/getProblemsWithPromise.js"></script>
       
+<!--         <script src="js/jquery.min.js"></script>-->
+<!--      <script src="myjs/getAnswer.js"></script>-->
+            <script src="../myjs/getAnswer.js"></script>
   </body>
 </html>

@@ -1,5 +1,6 @@
 package com.msec2016.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.msec2016.expression.IProGenAndSolver;
 import com.msec2016.expression.ProGenAndSolver;
 import com.msec2016.expression.Problem;
@@ -98,22 +99,38 @@ public class NewController {
     }
 
 
-    @RequestMapping(value = "/calc/{description}", method = RequestMethod.GET)
+    @RequestMapping(value = "/calc", method = RequestMethod.POST)
     @ResponseBody
-    public Problem calc(@PathVariable String description) {
+    public Problem calc(@RequestBody JSONObject jsonObj) {
 
-        //TRICK,to deal with the http transportation
-        description = description.replaceAll("@", "#");
-        description = description.replaceAll("&", "/");
-
-        String requestFor = "What we got,want to calc: " + description;
+        String requestFor = "What we got,want to calc: " + jsonObj;
         logger.info(requestFor);
 
 
         List<Problem> problemList = new ArrayList<>();
+        String description = jsonObj.getString("description");
         problemList.add(new Problem(description));
 
         return proGenAndSolver.solveProvidedProblems(problemList).get(0);
 
     }
+
+//    @RequestMapping(value = "/calc/{description}", method = RequestMethod.POST)
+//    @ResponseBody
+//    public Problem calc(@PathVariable String description) {
+//
+//        //TRICK,to deal with the http transportation
+////        description = description.replaceAll("@", "#");
+////        description = description.replaceAll("&", "/");
+//
+//        String requestFor = "What we got,want to calc: " + description;
+//        logger.info(requestFor);
+//
+//
+//        List<Problem> problemList = new ArrayList<>();
+//        problemList.add(new Problem(description));
+//
+//        return proGenAndSolver.solveProvidedProblems(problemList).get(0);
+//
+//    }
 }
